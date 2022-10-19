@@ -6,6 +6,8 @@ import Homepage from "./components/Homepage";
 import AllPosts from "./components/AllPosts";
 import DetailedPostView from "./components/DetailedPosts";
 import CreateLogin from "./components/CreateLogin";
+import Login from "./components/Login";
+import AddPosts from "./components/AddPosts";
 
 const router = createBrowserRouter([
     {
@@ -24,6 +26,14 @@ const router = createBrowserRouter([
             {
                 path: "/createlogin",
                 element: <CreateLogin />
+            },
+            {
+                path: "/login",
+                element: <Login />
+            },
+            {
+                path: "/addposts",
+                element: <AddPosts />
             }
         ]
     }

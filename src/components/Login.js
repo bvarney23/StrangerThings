@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import ReactDom from "react-dom";
 
-const CreateLogin = () => {
+const Login = () => {
     const [username, setUserName] = useState("");
     const [password, setPassword] = useState("");
 
@@ -9,7 +8,7 @@ const CreateLogin = () => {
         event.preventDefault();
 
         try {
-           const response = await fetch("https://strangers-things.herokuapp.com/api/2209-ftb-mt-web-ft/users/register",
+           const response = await fetch("https://strangers-things.herokuapp.com/api/2209-ftb-mt-web-ft/users/login",
            {
             method: "POST",
             headers: {
@@ -23,7 +22,7 @@ const CreateLogin = () => {
             })
            })
            const data = await response.json();
-           console.log("This is the data: ", data)
+           console.log("This is our data: ", data)
            
            localStorage.setItem("token", data.data.token)
         } catch (error) {
@@ -42,17 +41,18 @@ const CreateLogin = () => {
     return (
         <div>
             <form onSubmit={formSubmitHandler}>
-                <label>Enter New Username</label>
+                <label>Enter Username</label>
                 <input type="text" value={username} onChange={updateUserNameState}></input>
 
-                <label>Enter New Password</label>
+                <label>Enter Password</label>
                 <input type="text" value={password} onChange={updatePasswordState}></input>
 
-                <button type="submit">Sign Up</button>
+                <button type="submit">Sign In</button>
 
             </form>
         </div>
     )
 }
 
-export default CreateLogin
+
+export default Login

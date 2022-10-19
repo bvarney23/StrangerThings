@@ -24,11 +24,14 @@ const Homepage = () => {
     return (
 <div>
         <nav>
-            <Link to="/">Home</Link>
-            <Link to="/posts">All Posts</Link>
-            <Link to="/createlogin">Create Login</Link>
+            <Link to="/">Home</Link>&nbsp;
+            <Link to="/posts">All Posts</Link>&nbsp;
+            <Link to="/createlogin">Create Login</Link>&nbsp;
+            <Link to="/login">Login</Link>&nbsp;
+            <Link to="/addposts">Add Posts</Link>
         </nav>
-        <h1>This is a page</h1>
+        <h1>Welcome to sell zone</h1>
+        
 
         <Outlet context={posts}/>
         </div>
