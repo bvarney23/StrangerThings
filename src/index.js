@@ -8,6 +8,7 @@ import DetailedPostView from "./components/DetailedPosts";
 import CreateLogin from "./components/CreateLogin";
 import Login from "./components/Login";
 import AddPosts from "./components/AddPosts";
+import Profile from "./components/Profile";
 
 const router = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
             {
                 path: "/addposts",
                 element: <AddPosts />
+            },
+            {
+                path: "/profile",
+                element: <Profile />
             }
         ]
     }

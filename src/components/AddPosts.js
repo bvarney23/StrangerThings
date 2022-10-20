@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Navigate } from "react-router";
 
 const AddPosts = () => {
     const [title, setTitle] = useState("");
@@ -14,7 +15,7 @@ const AddPosts = () => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": ""
+                "Authorization": `Bearer ${localStorage.getItem("token")}`
             },
             body: JSON.stringify({
                 post: {
@@ -28,7 +29,7 @@ const AddPosts = () => {
         const data = await response.json();
         console.log("This is the data: ", data)
 
-        //something here to actually post the item?
+
         } catch (error) {
             console.log(error);
         }
@@ -42,9 +43,7 @@ const AddPosts = () => {
     function updatePriceState(event) {
         setPrice(event.target.value)
     }
-    function updateDeliverState(event) {
-        setDeliver(event.target.value)
-    }
+
 
     return (
         <div>
@@ -53,23 +52,15 @@ const AddPosts = () => {
                 <input type="text" value={title} onChange={updateTitleState}></input>
 
                 <label>Description</label>
-                <input type="text" value={title} onChange={updateDescriptionState}></input>
+                <input type="text" value={description} onChange={updateDescriptionState}></input>
 
                 <label>Price</label>
-                <input type="text" value={title} onChange={updatePriceState}></input>
+                <input type="text" value={price} onChange={updatePriceState}></input>
 
-                <label>Deliver</label>
-                <input list="text" value={title} onChange={updateDeliverState}></input>
+                {/* <label>Deliver</label>
+                <input list="text" value={deliver} onChange={updateDeliverState}></input> */}
 
-                {/* <label>Deliver Item</label>
-                <input list="false" onChange={updateDeliverState}>
-                    <datalist id="false">
-                        <option value="True"></option>
-                        <option value="False"></option>
-                    </datalist>
-                </input> */}
-
-                <button type="submit">Post Item</button>
+                <button type="submit">Create New Posts</button>
             </form>
         </div>
     )

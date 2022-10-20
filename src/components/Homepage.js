@@ -10,9 +10,9 @@ const Homepage = () => {
 
             try {
                 const response = await fetch ("https://strangers-things.herokuapp.com/api/2209-ftb-mt-web-ft/posts")
-                    console.log(response)
+                    console.log("This is the response from API call:", response)
                 const data = await response.json()
-                    console.log(data)   
+                    console.log("This is all posts data:", data)   
                 setPosts(data.data.posts)
             } catch (error) {
                 console.log(error)
@@ -28,7 +28,8 @@ const Homepage = () => {
             <Link to="/posts">All Posts</Link>&nbsp;
             <Link to="/createlogin">Create Login</Link>&nbsp;
             <Link to="/login">Login</Link>&nbsp;
-            <Link to="/addposts">Add Posts</Link>
+            <Link to="/addposts">Add Posts</Link>&nbsp;
+            <Link to="/profile">Profile</Link>
         </nav>
         <h1>Welcome to sell zone</h1>
         
