@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { Navigate } from "react-router";
+import { useOutletContext } from "react-router";
 
 const AddPosts = () => {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
     const [deliver, setDeliver] = useState("");
+
+    const [posts, setPosts] = useOutletContext();
 
     async function postSubmitHandler (event) {
         event.preventDefault();
@@ -29,7 +31,9 @@ const AddPosts = () => {
         const data = await response.json();
         console.log("This is the data: ", data)
 
+        setPosts([...posts, data.data.post])
 
+        
         } catch (error) {
             console.log(error);
         }

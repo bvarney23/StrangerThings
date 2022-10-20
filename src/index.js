@@ -10,6 +10,7 @@ import Login from "./components/Login";
 import AddPosts from "./components/AddPosts";
 import Profile from "./components/Profile";
 
+
 const router = createBrowserRouter([
     {
         path: "/",

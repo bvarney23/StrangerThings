@@ -11,9 +11,9 @@ const Homepage = () => {
             try {
                 const response = await fetch ("https://strangers-things.herokuapp.com/api/2209-ftb-mt-web-ft/posts")
                     console.log("This is the response from API call:", response)
-                const data = await response.json()
+                const {data} = await response.json()
                     console.log("This is all posts data:", data)   
-                setPosts(data.data.posts)
+                setPosts(data.posts)
             } catch (error) {
                 console.log(error)
             }
