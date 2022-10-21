@@ -1,7 +1,110 @@
+body {
+    background-color: rgba(20, 18, 28, 0.695);
+    margin: 0;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(255, 255, 255, 0.607);
+    padding-top: 0.5em;
+    padding-right: 1em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+}
 nav {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: row;
+}
+.head {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2em;
+        padding: 0.25em;
+        background: rgb(0, 0, 0);
+        border-radius: 6px;
+        box-shadow: 0 5px 5px -6px black;
+}
+.head:hover {
+    background: rgb(84, 75, 75);
 }
 h1 {
     text-align: center;
 }
+.navlink {
+    flex-grow: 3;
+    text-align: end;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 0.25em;
+    background: rgb(0, 0, 0);
+    border-radius: 6px;
+    box-shadow: 0 5px 5px -6px black;
+  }
+  .navlink:hover {
+    background: rgb(84, 75, 75);
+  }
+  #posts {
+    margin: 1%;
+  }
+  form {
+    background: #fbfbfb;
+    border-radius: 8px;
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+    height: 410px;
+    margin: 6rem auto 8.1rem auto;
+    width: 329px;
+  }
+  #form-content {
+    padding: 12px 44px;
+    display: flex;
+    flex-direction: column;
+  }
+  .form-content {
+    padding-top: 14px;;    
+}
+  button {
+    background-color: black;
+    border: none;
+    border-radius: 21px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    height: 42.3px;
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 153px;
+  }
+  #post-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1%;
+    margin-left: 2.5%;
+  }
+  #posts {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: #fbfbfb;
+    border-radius: 8px;
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+    height: 410px;
+    margin: 6rem auto 8.1rem auto;
+    width: 329px;
+  }
+  p {
+    text-align: center;
+  }
+  .navlink-posts {
+    flex-grow: 3;
+    text-align: end;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 0.25em;
+    background: rgb(0, 0, 0);
+    border-radius: 6px;
+    box-shadow: 0 5px 5px -6px black;
+  }
+  .navlink-posts:hover {
+    background: rgb(84, 75, 75);
+  }

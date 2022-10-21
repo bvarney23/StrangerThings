@@ -41,14 +41,16 @@ const Login = () => {
     return (
         <div>
             <form onSubmit={formSubmitHandler}>
-                <label>Enter Username</label>
-                <input type="text" value={username} onChange={updateUserNameState}></input>
+                <div id="form-content">
+                    <h3>Login</h3>
+                    <label>Username</label>
+                    <input type="text" className="form-content" value={username} onChange={updateUserNameState}></input>
 
-                <label>Enter Password</label>
-                <input type="text" value={password} onChange={updatePasswordState}></input>
+                    <label>Password</label>
+                    <input type="password" className="form-content" value={password} onChange={updatePasswordState}></input>
 
-                <button type="submit">Sign In</button>
-
+                    <button type="submit">Sign In</button>
+                </div>
             </form>
         </div>
     )

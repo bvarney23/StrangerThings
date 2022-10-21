@@ -9,6 +9,7 @@ import CreateLogin from "./components/CreateLogin";
 import Login from "./components/Login";
 import AddPosts from "./components/AddPosts";
 import Profile from "./components/Profile";
+import LandingPage from "./components/LandingPage";
 
 
 const router = createBrowserRouter([
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
         element: <Homepage />,
         errorElement: <Errorpage />,
         children: [
+            {
+                index: true,
+                element: <LandingPage />
+            },
             {
                 path: "/posts",
                 element: <AllPosts />
@@ -40,6 +45,10 @@ const router = createBrowserRouter([
             {
                 path: "/profile",
                 element: <Profile />
+            },
+            {
+                path: "/profile:_id",
+                element: <DetailedPostView />
             }
         ]
     }

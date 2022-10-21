@@ -42,14 +42,16 @@ const CreateLogin = () => {
     return (
         <div>
             <form onSubmit={formSubmitHandler}>
+            <div id="form-content">
+                <h3>Create Login</h3>
                 <label>Enter New Username</label>
-                <input type="text" value={username} onChange={updateUserNameState}></input>
+                <input type="text" className="form-content" value={username} onChange={updateUserNameState}></input>
 
                 <label>Enter New Password</label>
-                <input type="text" value={password} onChange={updatePasswordState}></input>
+                <input type="password" className="form-content" value={password} onChange={updatePasswordState}></input>
 
                 <button type="submit">Sign Up</button>
-
+            </div>
             </form>
         </div>
     )

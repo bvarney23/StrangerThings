@@ -23,19 +23,22 @@ const Homepage = () => {
 
     return (
 <div>
+    <header>
         <nav>
-            <Link to="/">Home</Link>&nbsp;
-            <Link to="/posts">All Posts</Link>&nbsp;
-            <Link to="/createlogin">Create Login</Link>&nbsp;
-            <Link to="/login">Login</Link>&nbsp;
-            <Link to="/addposts">Add Posts</Link>&nbsp;
-            <Link to="/profile">Profile</Link>
+            <Link className="head" to="/">Home</Link>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <Link className="navlink" to="/posts">All Posts</Link>&nbsp;
+            <Link className="navlink" to="/createlogin">Create Login</Link>&nbsp;
+            <Link className="navlink" to="/login">Login</Link>&nbsp;
+            <Link className="navlink" to="/addposts">Add Posts</Link>&nbsp;
+            <Link className="navlink" to="/profile">Profile</Link>
         </nav>
+    </header>
         <h1>Welcome to sell zone</h1>
         
 
-        <Outlet context={posts}/>
+        <Outlet className="post-info" context={posts}/>
         </div>
+
     )
 
 };

@@ -52,6 +52,7 @@ const AddPosts = () => {
     return (
         <div>
             <form onSubmit={postSubmitHandler}>
+                <div id="form-content">
                 <label>Post</label>
                 <input type="text" value={title} onChange={updateTitleState}></input>
 
@@ -65,6 +66,7 @@ const AddPosts = () => {
                 <input list="text" value={deliver} onChange={updateDeliverState}></input> */}
 
                 <button type="submit">Create New Posts</button>
+                </div>
             </form>
         </div>
     )

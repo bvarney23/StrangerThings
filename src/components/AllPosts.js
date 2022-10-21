@@ -5,15 +5,17 @@ const AllPosts = () => {
     const post = useOutletContext();
 
     return (
-        <div>
+        <div id="post-container">
         {
             post && post.length ? post.map((indivPosts, idx) => {
                 return <div key={idx}>
+                    <div id="posts">
                     <p>Title: {indivPosts.title}</p>
                     <p>Description: {indivPosts.description}</p>
                     <p>Price: {indivPosts.price}</p>
                     <p>Post Location: {indivPosts.location}</p>
-                    <Link to={`/posts/${idx}`}>Get More Info about {indivPosts.title}</Link>
+                    <Link className="navlink-posts" to={`/posts/${idx}`}>Get More Info about {indivPosts.title}</Link>
+                    </div>
                 </div>
             }) : <div>Server is down</div>
         }
