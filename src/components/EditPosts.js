@@ -34,7 +34,7 @@ const EditPost = (props) => {
     }
 
     return (
-        <form onSubmit={formSubmit}>
+        <form id="editform" onSubmit={formSubmit}>
             <label>Title</label>
             <input type="text"  value={title} onChange={changeInput}></input>
             <button type="submit">Update</button>

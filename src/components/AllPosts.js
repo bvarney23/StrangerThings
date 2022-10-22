@@ -10,11 +10,11 @@ const AllPosts = () => {
             post && post.length ? post.map((indivPosts, idx) => {
                 return <div key={idx}>
                     <div id="posts">
-                    <p>Title: {indivPosts.title}</p>
-                    <p>Description: {indivPosts.description}</p>
-                    <p>Price: {indivPosts.price}</p>
-                    <p>Post Location: {indivPosts.location}</p>
-                    <Link className="navlink-posts" to={`/posts/${indivPosts._id}`}>Get More Info about {indivPosts.title}</Link>
+                        <div className="postcontent"><p>Title:<br></br>{indivPosts.title}</p></div>
+                        <div className="postcontent"><p>Description:<br></br> {indivPosts.description}</p></div>
+                        <div className="postcontent"><p>Price:<br></br> {indivPosts.price}</p></div>
+                        <div className="postcontent"><p>Post Location:<br></br> {indivPosts.location}</p></div>
+                        <div className="postcontent"><Link className="navlink-posts" to={`/posts/${indivPosts._id}`}>Get More Info about {indivPosts.title}</Link></div>
                     </div>
                 </div>
             }) : <div>Server is down</div>

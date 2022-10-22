@@ -29,6 +29,9 @@ const AddPosts = () => {
             })
         })
         const data = await response.json();
+        setTitle("")
+        setDescription("")
+        setPrice("")
         console.log("This is the data: ", data)
 
         setPosts([...posts, data.data.post])

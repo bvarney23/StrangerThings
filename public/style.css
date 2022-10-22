@@ -71,8 +71,11 @@ h1 {
     color: rgb(255, 255, 255);
     height: 42.3px;
     margin: 0 auto;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     width: 153px;
+  }
+  button:hover {
+    background: rgb(84, 75, 75);
   }
   #post-container {
     display: flex;
@@ -82,29 +85,72 @@ h1 {
   }
   #posts {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     background: #fbfbfb;
     border-radius: 8px;
     box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
-    height: 410px;
-    margin: 6rem auto 8.1rem auto;
+    height: min-content;
+    padding-bottom: 2%;
     width: 329px;
+    margin-left: 2.5%;
+  }
+  .postcontent {
+    word-break: break-word;
+    text-align: center;
   }
   p {
     text-align: center;
+    overflow-wrap: break-all;
   }
   .navlink-posts {
-    flex-grow: 3;
-    text-align: end;
-    color: white;
+    background-color: black;
+    border: none;
+    /* border-radius: 21px; */
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    height: 42.3px;
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 153px;
     text-decoration: none;
-    font-size: 1.2em;
-    padding: 0.25em;
-    background: rgb(0, 0, 0);
-    border-radius: 6px;
-    box-shadow: 0 5px 5px -6px black;
+  }
+  .navlink-postscontent {
+    background-color: black;
+    border: none;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    height: 42.3px;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 153px;
+    text-decoration: none;
   }
   .navlink-posts:hover {
     background: rgb(84, 75, 75);
+  }
+  .navlink-postscontent:hover {
+    background: rgb(84, 75, 75);
+  }
+  #editposts {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: #fbfbfb;
+    border-radius: 8px;
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+    height: min-content;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    width: 329px;
+    margin-left: 2.5%;
+  }
+  #editform {
+    background: #fbfbfb;
+    border-radius: 8px;
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+    height: min-content;
+    margin: 6rem auto 8.1rem auto;
+    width: 329px;
+    text-align: center;
   }

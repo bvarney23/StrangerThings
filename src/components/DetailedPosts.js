@@ -23,7 +23,7 @@ const DetailedPostView = () => {
 
 
     return (
-        <div id="posts">
+        <div id="editposts">
             <button onClick={handleToggleEdit}>Edit Post</button>
             {
                 theSpecificPost.title ? <p>{theSpecificPost.title}</p> 

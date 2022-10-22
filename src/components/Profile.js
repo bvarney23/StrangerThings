@@ -22,7 +22,10 @@ const Profile = () => {
                 console.log("This is response for profile:", response)
                 const data = await response.json();
                 console.log("This is the profile data: ", data)
-                setProfile(data.data.posts)
+                const filteredData = data.data.posts.filter(post => {
+                    return post.active === true
+                })
+                setProfile(filteredData)
             } catch (error) {
                 console.log(error)
             }
@@ -60,12 +63,10 @@ const Profile = () => {
                 profile && profile.length ? profile.map((indivProfile, idx) => {
                     return <div key={idx}>
                         <div id="posts">
-                        <p>Title: {indivProfile.title}</p>
-                        <p>Item ID: {indivProfile._id}</p>
-                        <p>Description: {indivProfile.description}</p>
+                        <div className="postcontent"><p>Title:<br></br>{indivProfile.title}</p></div>
+                        <div className="postcontent"><p>Description:<br></br>{indivProfile.description}</p></div>
                         <button value={indivProfile._id} type="submit" onClick={(deletePost)}>Delete</button>
-                        {/* <button value={indivProfile._id} type="submit" onClick={(handleEditPost, handleToggleEdit)}>Update</button> */}
-                        <Link to={`/posts/${indivProfile._id}`}>See detailed view</Link>
+                        <Link className ="navlink-postscontent" to={`/posts/${indivProfile._id}`}>See detailed view</Link>
                         </div>
                     </div>
                 }) : <div>no data</div>    
