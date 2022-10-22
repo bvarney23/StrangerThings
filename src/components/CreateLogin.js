@@ -26,6 +26,7 @@ const CreateLogin = () => {
            console.log("This is the data: ", data)
            
            localStorage.setItem("token", data.data.token)
+
         } catch (error) {
             console.log(error)
         }

@@ -1,18 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useOutletContext, useParams } from "react-router-dom";
+import EditPost from "./EditPosts";
 
 const DetailedPostView = () => {
+    const [theSpecificPost, setTheSpecifcPost] = useState ({})
     const postData = useOutletContext();
+    const [toggleEditForm, setToggleEditForm] = useState(false)
 
-    const { data } = useParams();
+    function handleToggleEdit () {
+        setToggleEditForm(!toggleEditForm)
+    }
 
-    const theSpecificPost = postData[data];
+    
+    useEffect (() => {
+        console.log(postData)
+        const [singlePost] = postData.filter((post) => post._id === id)
+        setTheSpecifcPost (singlePost)
+    }, [])
+
+    const { id } = useParams();
+
+
+
     return (
-        <div>
+        <div id="posts">
+            <button onClick={handleToggleEdit}>Edit Post</button>
             {
-                theSpecificPost.title && theSpecificPost.title.length ? <p>{theSpecificPost.title}</p>
+                theSpecificPost.title ? <p>{theSpecificPost.title}</p> 
                 :
                 <p>No post information</p>
+            }
+            {   theSpecificPost.description  ? <p>{theSpecificPost.description}</p> 
+                :
+                <p>No post information</p>}
+            {
+                toggleEditForm ? <EditPost theSpecificPost={theSpecificPost}/> : null
             }
         </div>
     )

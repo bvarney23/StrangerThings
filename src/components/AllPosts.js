@@ -14,7 +14,7 @@ const AllPosts = () => {
                     <p>Description: {indivPosts.description}</p>
                     <p>Price: {indivPosts.price}</p>
                     <p>Post Location: {indivPosts.location}</p>
-                    <Link className="navlink-posts" to={`/posts/${idx}`}>Get More Info about {indivPosts.title}</Link>
+                    <Link className="navlink-posts" to={`/posts/${indivPosts._id}`}>Get More Info about {indivPosts.title}</Link>
                     </div>
                 </div>
             }) : <div>Server is down</div>

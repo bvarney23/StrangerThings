@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useOutletContext, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 const Profile = () => {
     const [profile, setProfile] = useState("")
     const [productId, setProductId] = useState("")
+
 
     useEffect (() => {
 
@@ -19,6 +21,7 @@ const Profile = () => {
                 })
                 console.log("This is response for profile:", response)
                 const data = await response.json();
+                console.log("This is the profile data: ", data)
                 setProfile(data.data.posts)
             } catch (error) {
                 console.log(error)
@@ -27,10 +30,11 @@ const Profile = () => {
         fetchProfileData()
     }, [])
 
-    useEffect (() => {
-        async function deletePost () {
+
+        async function deletePost (event) {
             try {
-                const response = await fetch (`https://strangers-things.herokuapp.com/api/2209-ftb-mt-web-ft/posts/635067147b519d0017001a84`, {
+                console.log(event.target.value)
+                const response = await fetch (`https://strangers-things.herokuapp.com/api/2209-ftb-mt-web-ft/posts/${event.target.value}`, {
                     method: "DELETE",
                     headers: {
                         "Content-Type": "application/json",
@@ -44,14 +48,14 @@ const Profile = () => {
             } catch (error) {
                 console.log(error)
             }
-        } deletePost()       
-    }, [])
+        }
 
-
+        
     return (
         <div>
             <h2>Welcome to your profile page</h2>
             <div id="post-container">
+
             {
                 profile && profile.length ? profile.map((indivProfile, idx) => {
                     return <div key={idx}>
@@ -59,8 +63,9 @@ const Profile = () => {
                         <p>Title: {indivProfile.title}</p>
                         <p>Item ID: {indivProfile._id}</p>
                         <p>Description: {indivProfile.description}</p>
-                        <button type="submit">Delete</button>
-                        <Link to={`/profile/${indivProfile._id}`}>See detailed view</Link>
+                        <button value={indivProfile._id} type="submit" onClick={(deletePost)}>Delete</button>
+                        {/* <button value={indivProfile._id} type="submit" onClick={(handleEditPost, handleToggleEdit)}>Update</button> */}
+                        <Link to={`/posts/${indivProfile._id}`}>See detailed view</Link>
                         </div>
                     </div>
                 }) : <div>no data</div>    

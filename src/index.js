@@ -27,7 +27,7 @@ const router = createBrowserRouter([
                 element: <AllPosts />
             },
             {
-                path: "/posts/:data",
+                path: "/posts/:id",
                 element: <DetailedPostView />
             },
             {
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
                 element: <Profile />
             },
             {
-                path: "/profile:_id",
+                path: "/profile/:id",
                 element: <DetailedPostView />
             }
         ]

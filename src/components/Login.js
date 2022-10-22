@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
     const [username, setUserName] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
     async function formSubmitHandler (event) {
         event.preventDefault();

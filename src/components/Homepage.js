@@ -10,7 +10,7 @@ const Homepage = () => {
 
             try {
                 const response = await fetch ("https://strangers-things.herokuapp.com/api/2209-ftb-mt-web-ft/posts")
-                    console.log("This is the response from API call:", response)
+                    // console.log("This is the response from API call:", response)
                 const {data} = await response.json()
                     console.log("This is all posts data:", data)   
                 setPosts(data.posts)
@@ -20,6 +20,7 @@ const Homepage = () => {
         }
         fetchPostsData();
     }, [])
+
 
     return (
 <div>
