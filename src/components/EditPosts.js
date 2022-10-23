@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 const EditPost = (props) => {
     const [title, setTitle] = useState("")
-    console.log("I am edit post props", props)
     const navigate = useNavigate()
     function changeInput (event) {
         console.log(event.target.value)
@@ -35,9 +34,11 @@ const EditPost = (props) => {
 
     return (
         <form id="editform" onSubmit={formSubmit}>
-            <label>Title</label>
-            <input type="text"  value={title} onChange={changeInput}></input>
-            <button type="submit">Update</button>
+            <div className="edit-content">
+            <label><p>Edit Title Below</p></label>
+            <p><input type="text"  value={title} onChange={changeInput}></input></p>
+            <p><button type="submit">Update</button></p>
+            </div>
         </form>
         
     )

@@ -22,6 +22,9 @@ const CreateLogin = () => {
                 }
             })
            })
+           setUserName("")
+           setPassword("")
+           alert("You have created a login")
            const data = await response.json();
            console.log("This is the data: ", data)
            
@@ -42,7 +45,7 @@ const CreateLogin = () => {
 
     return (
         <div>
-            <form onSubmit={formSubmitHandler}>
+            <form id="formcreatelogin" onSubmit={formSubmitHandler}>
             <div id="form-content">
                 <h3>Create Login</h3>
                 <label>Enter New Username</label>

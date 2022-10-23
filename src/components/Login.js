@@ -23,6 +23,9 @@ const Login = () => {
                 }
             })
            })
+           setUserName("")
+           setPassword("")
+           alert("You have been signed in")
            const data = await response.json();
            console.log("This is our data: ", data)
            
@@ -42,7 +45,7 @@ const Login = () => {
 
     return (
         <div>
-            <form onSubmit={formSubmitHandler}>
+            <form id="formsubmitlogin" onSubmit={formSubmitHandler}>
                 <div id="form-content">
                     <h3>Login</h3>
                     <label>Username</label>

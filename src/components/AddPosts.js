@@ -1,11 +1,13 @@
-import React, { useState } from "react";
-import { useOutletContext } from "react-router";
+import React, { useState, useEffect } from "react";
+import { useOutletContext } from "react-router-dom";
+
 
 const AddPosts = () => {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
-    const [deliver, setDeliver] = useState("");
+    const [deliver, setDeliver] = useState("")
+
 
     const [posts, setPosts] = useOutletContext();
 
@@ -32,21 +34,24 @@ const AddPosts = () => {
         setTitle("")
         setDescription("")
         setPrice("")
+        setDeliver("")
         console.log("This is the data: ", data)
 
         setPosts([...posts, data.data.post])
 
-        
         } catch (error) {
             console.log(error);
         }
     }
+
     function updateTitleState(event) {
         setTitle(event.target.value)
     }
+
     function updateDescriptionState(event) {
         setDescription(event.target.value)
     }
+
     function updatePriceState(event) {
         setPrice(event.target.value)
     }
@@ -54,7 +59,7 @@ const AddPosts = () => {
 
     return (
         <div>
-            <form onSubmit={postSubmitHandler}>
+            <form id="formaddposts" onSubmit={postSubmitHandler}>
                 <div id="form-content">
                 <label>Post</label>
                 <input type="text" value={title} onChange={updateTitleState}></input>
