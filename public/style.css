@@ -127,6 +127,7 @@ p {
   margin-top: 50px;
   width: 153px;
   text-decoration: none;
+  padding: .25em;
 }
 .navlink-postscontent {
   background-color: black;
@@ -138,6 +139,8 @@ p {
   width: 153px;
   text-decoration: none;
   text-align: center;
+  border-radius: 8px;
+  padding: .25em;
 }
 .navlink-posts:hover {
   background: rgb(84, 75, 75);
