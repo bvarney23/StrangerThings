@@ -127,6 +127,7 @@ p {
   margin-top: 50px;
   width: 153px;
   text-decoration: none;
+  border-radius: 8px;
   padding: .25em;
 }
 .navlink-postscontent {
