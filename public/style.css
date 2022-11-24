@@ -166,3 +166,7 @@ p {
 .headernav {
   flex-grow: 3;
 }
+
+h2 {
+  text-align: center;
+}
